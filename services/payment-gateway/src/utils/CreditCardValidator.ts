@@ -31,7 +31,7 @@ export class CreditCardValidator {
   static validate(card: CreditCardDetails): ValidationResult {
     const errors: string[] = [];
     
-    // Check card number
+    // Check card number - Updated
     if (!card.number || card.number.trim() === '') {
       errors.push('Card number is required');
     } else if (!this.isNumeric(card.number.replace(/\s/g, ''))) {
