@@ -1,0 +1,8 @@
+# Shared Components Rules
+- All components must have TypeScript prop types with JSDoc
+- Use styled-components for styling (no inline styles, no className strings)
+- All form inputs need proper labels and ARIA attributes
+- Error states must be user-friendly (no technical jargon)
+- Loading states required for all async operations
+- Components must be tree-shakeable
+- Minimum 80% test coverage required

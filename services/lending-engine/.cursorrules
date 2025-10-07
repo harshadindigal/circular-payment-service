@@ -1,0 +1,8 @@
+# Lending Engine Specific Rules
+- All lending decisions must be auditable with reason codes
+- Use sealed classes for Result types
+- Prefer non-null types, explicit null checks required
+- Log all state transitions with timestamps
+- Include units in variable names (amountUsd, durationMonths)
+- Document all business rules with comments
+- Fair lending: never use protected attributes in decisions

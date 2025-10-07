@@ -1,0 +1,72 @@
+pipeline {
+    agent {
+        docker {
+            image 'openjdk:11-jdk'
+        }
+    }
+    
+    stages {
+        stage('Checkout') {
+            steps {
+                checkout scm
+            }
+        }
+        
+        stage('Build') {
+            steps {
+                dir('services/lending-engine') {
+                    sh './gradlew build -x test'
+                }
+            }
+        }
+        
+        stage('Test') {
+            steps {
+                dir('services/lending-engine') {
+                    sh './gradlew test'
+                }
+            }
+            post {
+                always {
+                    junit 'services/lending-engine/build/test-results/test/*.xml'
+                }
+            }
+        }
+        
+        stage('Static Analysis') {
+            steps {
+                dir('services/lending-engine') {
+                    sh './gradlew detekt'
+                    sh './gradlew sonarqube'
+                }
+            }
+        }
+        
+        stage('Package') {
+            steps {
+                dir('services/lending-engine') {
+                    sh './gradlew bootJar'
+                }
+            }
+        }
+        
+        stage('Deploy to Dev') {
+            when {
+                branch 'develop'
+            }
+            steps {
+                echo 'Deploying to development environment'
+                // Deployment steps here
+            }
+        }
+    }
+    
+    post {
+        success {
+            echo 'Build successful!'
+        }
+        failure {
+            echo 'Build failed!'
+        }
+    }
+}

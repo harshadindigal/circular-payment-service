@@ -1,0 +1,7 @@
+# Payment Gateway Specific Rules
+- All payment operations must be idempotent
+- Use TransactionId for correlation across all logs
+- Rate limiting required on all public endpoints
+- PCI-DSS compliance: no card data in logs or error messages
+- All API responses must use standard error format from shared-components
+- Timeout for payment provider calls: 30 seconds max

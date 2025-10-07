@@ -1,0 +1,30 @@
+name: Payment Gateway CI
+on:
+  pull_request:
+    paths:
+      - 'services/payment-gateway/**'
+jobs:
+  lint-and-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16'
+          cache: 'npm'
+      - name: Install dependencies
+        run: npm ci
+        working-directory: services/payment-gateway
+      - name: Run ESLint
+        run: npm run lint
+        working-directory: services/payment-gateway
+      - name: Run tests
+        run: npm test
+        working-directory: services/payment-gateway
+      - name: SonarQube Scan
+        run: npm run sonar
+        working-directory: services/payment-gateway
+        env:
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+          SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
