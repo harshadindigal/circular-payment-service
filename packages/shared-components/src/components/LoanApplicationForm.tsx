@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 import { z } from 'zod';
 
-// Types/Interfaces - Updated
+// Types/Interfaces - Updated - Updated
 export interface LoanApplicationFormProps {
   onSubmit: (applicationData: LoanApplicationData) => Promise<void>;
   initialValues?: Partial<LoanApplicationData>;
