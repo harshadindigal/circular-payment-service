@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 import { z } from 'zod';
 
-// Types/Interfaces
+// Types/Interfaces - Updated
 export interface PaymentFormProps {
   onSubmit: (paymentData: PaymentData) => Promise<void>;
   initialValues?: Partial<PaymentData>;
