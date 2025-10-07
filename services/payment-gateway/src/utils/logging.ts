@@ -1,6 +1,6 @@
 import winston from 'winston';
 
-// Configure logger - Updated - Updated
+// Configure logger - Updated - Updated - Updated
 export const logger = winston.createLogger({
   level: process.env.LOG_LEVEL || 'info',
   format: winston.format.combine(
