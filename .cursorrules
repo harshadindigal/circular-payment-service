@@ -1,0 +1,7 @@
+# Circular Platform - Root Rules
+- All services must use structured logging with correlation IDs
+- Every financial transaction requires an audit trail
+- Never log PII, credit card numbers, or sensitive financial data
+- All monetary values must use precise decimal types (never floats)
+- Include error codes in all custom exceptions
+- All external API calls require timeout, retry logic, and circuit breakers

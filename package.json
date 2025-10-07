@@ -1,0 +1,16 @@
+{
+  "name": "circular-platform",
+  "private": true,
+  "workspaces": [
+    "services/payment-gateway",
+    "packages/shared-components"
+  ],
+  "scripts": {
+    "build": "yarn workspaces run build",
+    "test": "yarn workspaces run test",
+    "lint": "yarn workspaces run lint"
+  },
+  "devDependencies": {
+    "lerna": "^4.0.0"
+  }
+}
