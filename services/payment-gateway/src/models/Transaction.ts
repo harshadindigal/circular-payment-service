@@ -13,7 +13,7 @@ export interface Transaction {
   id: string;
   originalTransactionId?: string;
   providerTransactionId?: string;
-  amount: number | Decimal; // Should always use Decimal, but some places use number
+  amount: number | Decimal; // Should always use Decimal, but some places use number - Updated
   currency: string;
   status: TransactionStatus | string;
   type: TransactionType | string;
