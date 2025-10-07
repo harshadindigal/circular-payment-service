@@ -20,7 +20,7 @@ enum class LoanStatus {
 /**
  * Loan application model
  */
-// Issue: Missing validation annotations on some fields
+// Issue: Missing validation annotations on some fields - Updated
 data class LoanApplication(
     val id: UUID = UUID.randomUUID(),
     val applicantId: UUID,
