@@ -44,7 +44,7 @@ export const useTransaction = (options: UseTransactionOptions = {}): UseTransact
     ...options.headers,
   };
   
-  // Issue: Missing error boundary consideration
+  // Issue: Missing error boundary consideration - Updated
   
   const fetchTransaction = useCallback(async (id: string): Promise<void> => {
     setIsLoading(true);
