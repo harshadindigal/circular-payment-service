@@ -4,7 +4,7 @@ import { Decimal } from 'decimal.js';
 import winston from 'winston';
 import { Transaction, TransactionStatus, TransactionType } from '../models/Transaction';
 
-// Configure logger
+// Configure logger - Updated
 const logger = winston.createLogger({
   level: 'info',
   format: winston.format.json(),
