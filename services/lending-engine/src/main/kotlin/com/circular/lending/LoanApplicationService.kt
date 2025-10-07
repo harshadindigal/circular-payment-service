@@ -26,7 +26,7 @@ class LoanApplicationService(
      * @param application The loan application to process
      * @return The loan decision result
      */
-    // Issue: Missing transaction boundary
+    // Issue: Missing transaction boundary - Updated
     fun processApplication(application: LoanApplication): LoanDecision {
         logger.info("Processing loan application: ${application.id}")
         
