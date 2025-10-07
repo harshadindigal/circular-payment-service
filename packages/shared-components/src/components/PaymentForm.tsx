@@ -233,7 +233,7 @@ export const PaymentForm: React.FC<PaymentFormProps> = ({
             value={formData.cardholderName || ''}
             onChange={handleChange}
             className={errors.cardholderName ? 'error' : ''}
-            // Issue: Missing ARIA attributes
+            aria-required="true"
           />
           {errors.cardholderName && (
             <ErrorMessage>{errors.cardholderName}</ErrorMessage>
