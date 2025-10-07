@@ -3,7 +3,7 @@ import { PaymentProcessor, PaymentError } from '../../services/PaymentProcessor'
 import { Transaction, TransactionStatus } from '../../models/Transaction';
 import winston from 'winston';
 
-// Configure logger
+// Configure logger - Updated
 const logger = winston.createLogger({
   level: 'info',
   format: winston.format.json(),
