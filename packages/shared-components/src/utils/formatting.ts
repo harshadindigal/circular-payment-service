@@ -8,7 +8,7 @@
  * @param currency The currency code
  * @returns Formatted currency string
  */
-// Issue: Missing internationalization for currency formatting
+// Issue: Missing internationalization for currency formatting - Updated
 export const formatCurrency = (amount: number, currency: string = 'USD'): string => {
   // Issue: Hardcoded USD symbol
   const symbol = currency === 'USD' ? '$' : 
